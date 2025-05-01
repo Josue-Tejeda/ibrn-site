@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iglesia Bautista Restaurando Las Naciones</title>
+    <meta name="description" content="Comunidad cristiana dedicada a restaurar vidas y familias a través de la palabra de Dios.">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .font-heading { font-family: 'Playfair Display', serif; }
+        .font-body { font-family: 'Montserrat', sans-serif; }
+        .hero-pattern { 
+            background-color: #1a365d;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232d4e77' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Override Tailwind blue palette with custom colors */
+        :root {
+            /* Primary blue scale */
+            --tw-color-blue-50: #eef0f7;
+            --tw-color-blue-100: #d5daf0;
+            --tw-color-blue-200: #aab4e1;
+            --tw-color-blue-300: #808fd3;
+            --tw-color-blue-400: #5669c4;
+            --tw-color-blue-500: #2b44b6;
+            --tw-color-blue-600: #142d8c;
+            --tw-color-blue-700: #051041; /* Base color */
+            --tw-color-blue-800: #040c32;
+            --tw-color-blue-900: #030922;
+            --tw-color-blue-950: #020514;
+
+            --yellow-50: #ecf3f1;
+            --yellow-100: #d9e7e3;
+            --yellow-200: #b3cfc7;
+            --yellow-300: #8db7ac;
+            --yellow-400: #679f90;
+            --yellow-500: #477c6f; /* Base color */
+            --yellow-600: #3d6a5f;
+            --yellow-700: #33584f;
+            --yellow-800: #29463f;
+            --yellow-900: #1f342f;
+            --yellow-950: #152320;
+            
+            /* Accent blues */
+            --flame-light: #33adff;
+            --flame-medium: #0088cc;
+            --flame-dark: #005580;
+            
+            /* Background */
+            --background-dark: #000000;
+        
+        .text-yellow-50 { color: var(--yellow-50); }
+        .text-yellow-100 { color: var(--yellow-100); }
+        .text-yellow-200 { color: var(--yellow-200); }
+        .text-yellow-300 { color: var(--yellow-300); }
+        .text-yellow-400 { color: var(--yellow-400); }
+        .text-yellow-500 { color: var(--yellow-500); }
+        .text-yellow-600 { color: var(--yellow-600); }
+        .text-yellow-700 { color: var(--yellow-700); }
+        .text-yellow-800 { color: var(--yellow-800); }
+        .text-yellow-900 { color: var(--yellow-900); }
+        .text-yellow-950 { color: var(--yellow-950); }
+        
+        .bg-yellow-50 { background-color: var(--yellow-50); }
+        .bg-yellow-100 { background-color: var(--yellow-100); }
+        .bg-yellow-200 { background-color: var(--yellow-200); }
+        .bg-yellow-300 { background-color: var(--yellow-300); }
+        .bg-yellow-400 { background-color: var(--yellow-400); }
+        .bg-yellow-500 { background-color: var(--yellow-500); }
+        .bg-yellow-600 { background-color: var(--yellow-600); }
+        .bg-yellow-700 { background-color: var(--yellow-700); }
+        .bg-yellow-800 { background-color: var(--yellow-800); }
+        .bg-yellow-900 { background-color: var(--yellow-900); }
+        .bg-yellow-950 { background-color: var(--yellow-950); }
+        
+        /* Apply the custom colors to Tailwind classes */
+        .bg-blue-50 { background-color: var(--tw-color-blue-50) !important; }
+        .bg-blue-100 { background-color: var(--tw-color-blue-100) !important; }
+        .bg-blue-200 { background-color: var(--tw-color-blue-200) !important; }
+        .bg-blue-300 { background-color: var(--tw-color-blue-300) !important; }
+        .bg-blue-400 { background-color: var(--tw-color-blue-400) !important; }
+        .bg-blue-500 { background-color: var(--tw-color-blue-500) !important; }
+        .bg-blue-600 { background-color: var(--tw-color-blue-600) !important; }
+        .bg-blue-700 { background-color: var(--tw-color-blue-700) !important; }
+        .bg-blue-800 { background-color: var(--tw-color-blue-800) !important; }
+        .bg-blue-900 { background-color: var(--tw-color-blue-900) !important; }
+        
+        /* Text colors */
+        .text-blue-50 { color: var(--tw-color-blue-50) !important; }
+        .text-blue-100 { color: var(--tw-color-blue-100) !important; }
+        .text-blue-200 { color: var(--tw-color-blue-200) !important; }
+        .text-blue-300 { color: var(--tw-color-blue-300) !important; }
+        .text-blue-400 { color: var(--tw-color-blue-400) !important; }
+        .text-blue-500 { color: var(--tw-color-blue-500) !important; }
+        .text-blue-600 { color: var(--tw-color-blue-600) !important; }
+        .text-blue-700 { color: var(--tw-color-blue-700) !important; }
+        .text-blue-800 { color: var(--tw-color-blue-800) !important; }
+        .text-blue-900 { color: var(--tw-color-blue-900) !important; }
+        
+        /* Border colors */
+        .border-blue-50 { border-color: var(--tw-color-blue-50) !important; }
+        .border-blue-100 { border-color: var(--tw-color-blue-100) !important; }
+        .border-blue-200 { border-color: var(--tw-color-blue-200) !important; }
+        .border-blue-300 { border-color: var(--tw-color-blue-300) !important; }
+        .border-blue-400 { border-color: var(--tw-color-blue-400) !important; }
+        .border-blue-500 { border-color: var(--tw-color-blue-500) !important; }
+        .border-blue-600 { border-color: var(--tw-color-blue-600) !important; }
+        .border-blue-700 { border-color: var(--tw-color-blue-700) !important; }
+        .border-blue-800 { border-color: var(--tw-color-blue-800) !important; }
+        .border-blue-900 { border-color: var(--tw-color-blue-900) !important; }
+        
+        /* Custom flame accent colors */
+        .bg-flame-light { background-color: var(--flame-light) !important; }
+        .bg-flame-medium { background-color: var(--flame-medium) !important; }
+        .bg-flame-dark { background-color: var(--flame-dark) !important; }
+        .bg-background-dark { background-color: var(--background-dark) !important; }
+        
+        .text-flame-light { color: var(--flame-light) !important; }
+        .text-flame-medium { color: var(--flame-medium) !important; }
+        .text-flame-dark { color: var(--flame-dark) !important; }
+        
+        .border-flame-light { border-color: var(--flame-light) !important; }
+        .border-flame-medium { border-color: var(--flame-medium) !important; }
+        .border-flame-dark { border-color: var(--flame-dark) !important; }
+
+        }
+    </style>
+</head>
+<body class="font-body bg-gray-50 text-gray-800">
+    <!-- Header & Navigation -->
+    <header x-data="{ mobileMenuOpen: false }" class="fixed w-full z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3">
+                    <div class="bg-blue-700 rounded-full h-10 w-10 flex items-center justify-center">
+                        <svg class="size-9 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 71.454 149.999" fill="white">
+                            <path d="M44.1 141.817s9.273-9.129 9.273-25.718c0-23.003-15.736-23.715-15.736-45.19 0-12.944 9.472-22.302 11.455-24 0 35.554 22.282 33.054 22.282 56.181 0 29.097-27.273 38.727-27.273 38.727ZM26.181 70.281c0 17.811 21.967 33.079 16.909 52.991 0-21.738-37.636-34.445-37.636-62.726 0-24.529 34.467-35.22 23.372-60.545 3.304 1.648 14.728 15.321 14.728 27.273 0 17.237-17.373 25.144-17.373 43.008ZM6.463 84.545c0 16.71 30 27.082 30 44.1 0 10.567-8.068 19.294-12.463 21.355 8.434-19.009-24-15.973-24-45.273 0-9.745 4.096-14.161 6.463-20.182Z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold font-heading leading-tight md:text-xl">Iglesia Bautista</h1>
+                        <p class="text-xs text-blue-700 font-semibold tracking-wider">RESTAURANDO LAS NACIONES</p>
+                    </div>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-blue-700 font-light hover:text-blue-500 transition">Inicio</a>
+                    <a href="#nosotros" class="font-light hover:text-blue-700 transition">Nosotros</a>
+                    <a href="#servicios" class="font-light hover:text-blue-700 transition">Servicios</a>
+                    <a href="#ministerios" class="font-light hover:text-blue-700 transition">Ministerios</a>
+                    <a href="#eventos" class="font-light hover:text-blue-700 transition">Eventos</a>
+                    <a href="#contacto" class="font-light hover:text-blue-700 transition">Contacto</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-gray-700 hover:text-blue-700 focus:outline-none">
+                    <i x-show="!mobileMenuOpen" class="fas fa-bars text-2xl"></i>
+                    <i x-show="mobileMenuOpen" class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div x-show="mobileMenuOpen" x-transition class="md:hidden pb-4" x-cloak>
+                <nav class="flex flex-col space-y-3">
+                    <a href="#inicio" @click="mobileMenuOpen = false" class="py-2 px-4 font-medium text-blue-700 hover:bg-blue-50 rounded transition">Inicio</a>
+                    <a href="#nosotros" @click="mobileMenuOpen = false" class="py-2 px-4 font-medium hover:bg-blue-50 hover:text-blue-700 rounded transition">Nosotros</a>
+                    <a href="#servicios" @click="mobileMenuOpen = false" class="py-2 px-4 font-medium hover:bg-blue-50 hover:text-blue-700 rounded transition">Servicios</a>
+                    <a href="#ministerios" @click="mobileMenuOpen = false" class="py-2 px-4 font-medium hover:bg-blue-50 hover:text-blue-700 rounded transition">Ministerios</a>
+                    <a href="#eventos" @click="mobileMenuOpen = false" class="py-2 px-4 font-medium hover:bg-blue-50 hover:text-blue-700 rounded transition">Eventos</a>
+                    <a href="#contacto" @click="mobileMenuOpen = false" class="py-2 px-4 font-medium hover:bg-blue-50 hover:text-blue-700 rounded transition">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-pattern text-white pt-28 pb-20 md:pt-40 md:pb-32">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight mb-6">
+                        Restaurando Vidas, <span class="text-yellow-300">Transformando Naciones</span>
+                    </h1>
+                    <p class="text-lg md:text-xl opacity-90 mb-8 max-w-xl mx-auto md:mx-0">
+                        Somos una familia de fe comprometida en llevar el mensaje de restauración a cada corazón. Nos encantaría que formes parte de esta misión transformadora. 
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
+                        <a href="#servicios" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition shadow-lg flex items-center justify-center">
+                            <i class="fas fa-church mr-2"></i> Nuestros Servicios
+                        </a>
+                        <a href="#contacto" class="bg-white hover:bg-gray-100 text-blue-700 font-medium py-3 px-6 rounded-lg transition shadow-lg flex items-center justify-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i> Encuéntranos
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:block relative">
+                    <div class="absolute -top-8 -left-8 w-24 h-24 bg-yellow-400 rounded-full opacity-60"></div>
+                    <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-blue-500 rounded-full opacity-60"></div>
+                    <img src="/api/placeholder/600/400" alt="Comunidad de fe" class="rounded-lg shadow-2xl relative z-10 w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Announcement Bar -->
+    <section class="bg-yellow-400 py-4">
+        <div class="container mx-auto px-4" x-data="{ open: true }">
+            <div x-show="open" class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center mb-2 md:mb-0">
+                    <i class="fas fa-bullhorn text-gray-800 mr-3 text-xl"></i>
+                    <p class="font-medium text-gray-800">
+                        Próximo evento especial: Servicio de Jovenes - Este fin de semana
+                    </p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#eventos" class="text-gray-800 font-bold hover:text-blue-700 transition">Más información</a>
+                    <button @click="open = false" class="text-gray-800 hover:text-gray-600">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Message -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4 text-blue-800">Bienvenido a Nuestra Iglesia</h2>
+                <div class="h-1 w-24 bg-yellow-400 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-700 mb-8">
+                    En Iglesia Bautista Restaurando Las Naciones, creemos en el poder transformador del evangelio de Jesucristo. Somos una comunidad vibrante de fe, comprometida con la enseñanza bíblica y el discipulado.
+                </p>
+                <div class="flex justify-center">
+                    <a href="#nosotros" class="inline-flex items-center text-blue-700 font-medium hover:text-blue-500 transition">
+                        Conoce más sobre nosotros
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Times -->
+    <section id="servicios" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4 text-blue-800">Horarios de Servicios</h2>
+                <div class="h-1 w-24 bg-yellow-400 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Te invitamos a ser parte de nuestras reuniones semanales donde experimentarás la presencia de Dios.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Sunday Service -->
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center transform transition hover:scale-105">
+                    <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bible text-blue-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Servicio Dominical</h3>
+                    <p class="text-gray-600 mb-4">Un tiempo de adoración, enseñanza bíblica y comunión para toda la familia.</p>
+                    <div class="text-blue-700 font-bold mb-1">Domingos</div>
+                    <div class="text-gray-700">7:00 AM - 9:30 PM</div>
+                </div>
+
+                <!-- Prayer Meeting -->
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center transform transition hover:scale-105">
+                    <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-praying-hands text-blue-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Reunión de Oración</h3>
+                    <p class="text-gray-600 mb-4">Intercesión por la iglesia, la ciudad y las naciones.</p>
+                    <div class="text-blue-700 font-bold mb-1">Martes</div>
+                    <div class="text-gray-700">7:00 PM - 9:30 PM</div>
+                </div>
+
+                <!-- Bible Study -->
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center transform transition hover:scale-105">
+                    <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-book-open text-blue-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Escuelas de dicipulado</h3>
+                    <p class="text-gray-600 mb-4">Profundizando en la palabra de Dios para crecer en conocimiento y fe.</p>
+                    <div class="text-blue-700 font-bold mb-1">Jueves</div>
+                    <div class="text-gray-700">8:30 AM - 9:30 PM</div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#contacto" class="inline-flex items-center bg-blue-700 hover:bg-blue-800 text-white font-medium py-3 px-6 rounded-lg transition shadow-lg">
+                    <i class="fas fa-map-marker-alt mr-2"></i> Cómo llegar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="nosotros" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4 text-blue-800">Quiénes Somos</h2>
+                    <div class="h-1 w-24 bg-yellow-400 mb-6"></div>
+                    <p class="text-lg text-gray-700 mb-4">
+                        Iglesia Bautista Restaurando Las Naciones es una comunidad cristiana comprometida con la predicación del evangelio, el discipulado y la transformación social a través de los valores bíblicos.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Nuestra visión es ser una iglesia que impacte a las familias, la comunidad y las naciones con el mensaje transformador de Jesucristo, levantando discípulos que manifiesten el Reino de Dios.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-start">
+                            <i class="fas fa-heart text-red-500 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">Amor</h4>
+                                <p class="text-gray-600">Reflejando el amor de Cristo en todo lo que hacemos</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-book text-blue-700 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">Palabra</h4>
+                                <p class="text-gray-600">Fundamentados en la enseñanza bíblica</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-hands-helping text-green-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">Servicio</h4>
+                                <p class="text-gray-600">Sirviendo a Dios y a la comunidad</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-user-friends text-purple-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">Comunidad</h4>
+                                <p class="text-gray-600">Creciendo juntos en fe y amistad</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="inline-flex items-center bg-blue-700 hover:bg-blue-800 text-white font-medium py-3 px-6 rounded-lg transition shadow-lg">
+                        <i class="fas fa-users mr-2"></i> Conoce a nuestro equipo
+                    </a>
+                </div>
+                <div class="order-1 md:order-2 grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <img src="/api/placeholder/400/300" alt="Comunidad" class="rounded-lg shadow-lg w-full transform -rotate-3">
+                        <img src="/api/placeholder/400/250" alt="Adoración" class="rounded-lg shadow-lg w-full transform rotate-3">
+                    </div>
+                    <div class="space-y-4 mt-6">
+                        <img src="/api/placeholder/400/250" alt="Predicación" class="rounded-lg shadow-lg w-full transform rotate-3">
+                        <img src="/api/placeholder/400/300" alt="Oración" class="rounded-lg shadow-lg w-full transform -rotate-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ministries -->
+    <section id="ministerios" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4 text-blue-800">Nuestras Redes</h2>
+                <div class="h-1 w-24 bg-yellow-400 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Descubre las diferentes áreas de servicio donde puedes crecer, servir y desarrollar tus dones.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Ministry Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-blue-700 flex items-center justify-center">
+                        <i class="fas fa-child text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Ministerio de Niños</h3>
+                        <p class="text-gray-600 mb-4">
+                            Formando a los más pequeños con valores cristianos y un fundamento sólido en la palabra de Dios.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-blue-700 hover:text-blue-500 font-medium transition">
+                            Más información
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ministry Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-purple-600">
+                        <img src="grupo.jpg" alt="Ministerio de Adoración" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Grupos de Amigos</h3>
+                        <p class="text-gray-600 mb-4">
+                            Comunidades más pequeñas donde cultivamos relaciones significativas y crecemos juntos en la fe.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-blue-700 hover:text-blue-500 font-medium transition">
+                            Más información
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ministry Card 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-purple-600">
+                        <img src="alabanza.jpg" alt="Ministerio de Adoración" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Ministerio de Adoración</h3>
+                        <p class="text-gray-600 mb-4">
+                            Llevando a la congregación a la presencia de Dios a través de la música y la alabanza.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-blue-700 hover:text-blue-500 font-medium transition">
+                            Más información
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ministry Card 4 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-red-600 flex items-center justify-center">
+                        <i class="fas fa-heart text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Ministerio de Matrimonios</h3>
+                        <p class="text-gray-600 mb-4">
+                            Fortaleciendo familias a través de la enseñanza bíblica y el desarrollo de relaciones saludables.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-blue-700 hover:text-blue-500 font-medium transition">
+                            Más información
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ministry Card 5 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-yellow-600 flex items-center justify-center">
+                        <i class="fas fa-hands-helping text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Acción Social</h3>
+                        <p class="text-gray-600 mb-4">
+                            Extendiendo el amor de Cristo a los más necesitados a través de proyectos comunitarios.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-blue-700 hover:text-blue-500 font-medium transition">
+                            Más información
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ministry Card 6 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 bg-indigo-600 flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Discipulado</h3>
+                        <p class="text-gray-600 mb-4">
+                            Formando discípulos maduros que vivan y compartan los principios del Reino de Dios.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-blue-700 hover:text-blue-500 font-medium transition">
+                            Más información
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section id="eventos" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4 text-blue-800">Próximos Eventos</h2>
+                <div class="h-1 w-24 bg-yellow-400 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Mantente al día con nuestras actividades y sé parte de lo que Dios está haciendo en nuestra comunidad.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Event 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                    <div class="relative">
+                        <img src="/api/placeholder/400/200" alt="no image yet" class="w-full h-48 object-cover">
+                        <div class="absolute top-0 left-0 bg-yellow-500 text-white px-3 py-1 rounded-br-lg font-bold">
+                            DESTACADO
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-gray-500 mb-2">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            <span>5-7 Abril, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Vigilia</h3>
+                        <p class="text-gray-600 mb-4">
+                            Noche de adoracion y oracion para buscar la presencia de Dios y recibir su dirección.
+                        </p>
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Sede Principal</span>
+                        </div>
+                        <a href="#" class="inline-block bg-blue-700 hover:bg-blue-800 text-white font-medium py-2 px-4 rounded transition">
+                            Ver detalles
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                    <div class="relative">
+                        <img src="/api/placeholder/400/200" alt="no image yet" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-gray-500 mb-2">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            <span>20-22 Abril, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Retiro de Matrimonios</h3>
+                        <p class="text-gray-600 mb-4">
+                            Un fin de semana para renovar y fortalecer tu relación matrimonial bajo principios bíblicos.
+                        </p>
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Sede Principal</span>
+                        </div>
+                        <a href="#" class="inline-block bg-blue-700 hover:bg-blue-800 text-white font-medium py-2 px-4 rounded transition">
+                            Ver detalles
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                    <div class="relative">
+                        <img src="/api/placeholder/400/200" alt="no image yet" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-gray-500 mb-2">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            <span>15 Mayo, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Servicio de Jovenes</h3>
+                        <p class="text-gray-600 mb-4"> 
+                            Una noche especial de alabanza y adoración para jovenes y adolescentes.
+                        </p>
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Sede Principal</span>
+                        </div>
+                        <a href="#" class="inline-block bg-blue-700 hover:bg-blue-800 text-white font-medium py-2 px-4 rounded transition">
+                            Ver detalles
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="#" class="inline-flex items-center bg-blue-700 hover:bg-blue-800 text-white font-medium py-3 px-6 rounded-lg transition shadow-lg">
+                    <i class="fas fa-calendar-alt mr-2"></i> Ver calendario completo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4 text-blue-800">Testimonios</h2>
+                <div class="h-1 w-24 bg-yellow-400 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Vidas transformadas por el poder de Dios en nuestra comunidad.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8" x-data="{testimonials: [0, 1, 2]}">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-lg shadow-lg p-8 relative">
+                    <div class="text-yellow-400 text-6xl absolute -top-5 left-4 opacity-20">"</div>
+                    <div class="relative z-10">
+                        <p class="text-gray-700 mb-6 italic">
+                            "Encontré en esta iglesia no solo una comunidad, sino una verdadera familia. Los principios bíblicos que he aprendido han transformado mi matrimonio y mi relación con mis hijos."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                MR
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Elias Mesino</h4>
+                                <p class="text-gray-600 text-sm">Miembro desde 2015</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-lg shadow-lg p-8 relative">
+                    <div class="text-yellow-400 text-6xl absolute -top-5 left-4 opacity-20">"</div>
+                    <div class="relative z-10">
+                        <p class="text-gray-700 mb-6 italic">
+                            "Llegué con muchas heridas emocionales y a través de la palabra y el discipulado he experimentado sanidad y restauración. Ahora sirvo en el ministerio de jóvenes y puedo ayudar a otros."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                LC
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Julieth Camargo</h4>
+                                <p class="text-gray-600 text-sm">Miembro desde 1970</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-lg shadow-lg p-8 relative">
+                    <div class="text-yellow-400 text-6xl absolute -top-5 left-4 opacity-20">"</div>
+                    <div class="relative z-10">
+                        <p class="text-gray-700 mb-6 italic">
+                            "Como familia hemos crecido espiritualmente. Los grupos familiares nos han ayudado a profundizar nuestra fe y a construir amistades significativas con otros creyentes."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                FV
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Familia Tejeda</h4>
+                                <p class="text-gray-600 text-sm">Miembros desde 2020</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Sermons -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4 text-blue-800">Últimas Predicaciones</h2>
+                <div class="h-1 w-24 bg-yellow-400 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Fortalece tu vida espiritual con nuestras enseñanzas bíblicas.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Sermon 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                    <div class="relative">
+                        <img src="/api/placeholder/400/225" alt="Sermón" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                            <div class="bg-blue-700 rounded-full h-16 w-16 flex items-center justify-center cursor-pointer hover:bg-blue-600 transition">
+                                <i class="fas fa-play text-white text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-gray-500 mb-2">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            <span>26 Marzo, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">El Poder de la Fe</h3>
+                        <p class="text-gray-600 mb-4">
+                            Descubre cómo la fe puede mover montañas en tu vida cuando actúas conforme a la palabra de Dios.
+                        </p>
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <i class="fas fa-user mr-2"></i>
+                            <span>Pastor Luis Enrique</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#" class="inline-flex items-center text-blue-700 hover:text-blue-500 font-medium transition">
+                                <i class="fas fa-headphones mr-2"></i> Escuchar
+                            </a>
+                            <a href="#" class="inline-flex items-center text-blue-700 hover:text-blue-500 font-medium transition">
+                                <i class="fas fa-download mr-2"></i> Descargar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sermon 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                    <div class="relative">
+                        <img src="/api/placeholder/400/225" alt="Sermón" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                            <div class="bg-blue-700 rounded-full h-16 w-16 flex items-center justify-center cursor-pointer hover:bg-blue-600 transition">
+                                <i class="fas fa-play text-white text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-gray-500 mb-2">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            <span>19 Marzo, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Sanando las Relaciones Familiares</h3>
+                        <p class="text-gray-600 mb-4">
+                            Principios bíblicos para restaurar y fortalecer los lazos familiares según el diseño de Dios.
+                        </p>
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <i class="fas fa-user mr-2"></i>
+                            <span>Pastor Luis Enrique</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#" class="inline-flex items-center text-blue-700 hover:text-blue-500 font-medium transition">
+                                <i class="fas fa-headphones mr-2"></i> Escuchar
+                            </a>
+                            <a href="#" class="inline-flex items-center text-blue-700 hover:text-blue-500 font-medium transition">
+                                <i class="fas fa-download mr-2"></i> Descargar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sermon 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                    <div class="relative">
+                        <img src="/api/placeholder/400/225" alt="Sermón" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                            <div class="bg-blue-700 rounded-full h-16 w-16 flex items-center justify-center cursor-pointer hover:bg-blue-600 transition">
+                                <i class="fas fa-play text-white text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-gray-500 mb-2">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            <span>12 Marzo, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">El Propósito de Dios para tu Vida</h3>
+                        <p class="text-gray-600 mb-4">
+                            Descubriendo y viviendo el plan divino que Dios ha preparado para cada uno de nosotros.
+                        </p>
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <i class="fas fa-user mr-2"></i>
+                            <span>Pastor Elias Mesino</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#" class="inline-flex items-center text-blue-700 hover:text-blue-500 font-medium transition">
+                                <i class="fas fa-headphones mr-2"></i> Escuchar
+                            </a>
+                            <a href="#" class="inline-flex items-center text-blue-700 hover:text-blue-500 font-medium transition">
+                                <i class="fas fa-download mr-2"></i> Descargar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="#" class="inline-flex items-center bg-blue-700 hover:bg-blue-800 text-white font-medium py-3 px-6 rounded-lg transition shadow-lg">
+                    <i class="fas fa-microphone-alt mr-2"></i> Ver todas las predicaciones
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-blue-700 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold mb-6">¿Listo para formar parte de nuestra comunidad?</h2>
+            <p class="text-xl opacity-90 max-w-3xl mx-auto mb-8">
+                Te invitamos a visitarnos este domingo y experimentar el amor y la presencia de Dios en nuestra comunidad.
+            </p>
+            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
+                <a href="#servicios" class="bg-white text-blue-700 hover:bg-gray-100 font-medium py-3 px-6 rounded-lg transition shadow-lg flex items-center justify-center">
+                    <i class="fas fa-church mr-2"></i> Horarios de Servicios
+                </a>
+                <a href="#contacto" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-medium py-3 px-6 rounded-lg transition shadow-lg flex items-center justify-center">
+                    <i class="fas fa-map-marker-alt mr-2"></i> Cómo Llegar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location and Contact Form -->
+    <section id="contacto" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4 text-blue-800">Contáctanos</h2>
+                <div class="h-1 w-24 bg-yellow-400 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Estamos aquí para servirte. No dudes en contactarnos si tienes alguna pregunta o necesitas apoyo espiritual.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info & Map -->
+                <div>
+                    <div class="bg-gray-100 p-8 rounded-lg shadow-lg mb-8">
+                        <h3 class="text-xl font-bold mb-4">Información de Contacto</h3>
+                        
+                        <div class="flex items-start mb-4">
+                            <div class="bg-blue-700 rounded-full h-10 w-10 flex items-center justify-center text-white mr-4 flex-shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Dirección:</h4>
+                                <p class="text-gray-700">No me la se <br>Ciudad, Soledad</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-4">
+                            <div class="bg-blue-700 rounded-full h-10 w-10 flex items-center justify-center text-white mr-4 flex-shrink-0">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Teléfono:</h4>
+                                <p class="text-gray-700">(123) 456-7890</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-4">
+                            <div class="bg-blue-700 rounded-full h-10 w-10 flex items-center justify-center text-white mr-4 flex-shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Email:</h4>
+                                <p class="text-gray-700">nolose@restaurandolasnaciones.org</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-700 rounded-full h-10 w-10 flex items-center justify-center text-white mr-4 flex-shrink-0">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Horario de Oficina:</h4>
+                                <p class="text-gray-700">Lunes a Viernes: 9:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Map Placeholder -->
+                    <div class="bg-gray-200 h-64 rounded-lg shadow-lg flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-map-marked-alt text-4xl text-gray-400 mb-3"></i>
+                            <p class="text-gray-600">Mapa de ubicación aquí</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+                        <h3 class="text-xl font-bold mb-6">Envíanos un Mensaje</h3>
+                        
+                        <form x-data="{
+                            name: '',
+                            email: '',
+                            phone: '',
+                            message: '',
+                            submitted: false,
+                            submit() {
+                                this.submitted = true;
+                                // Aquí iría el código para enviar el formulario
+                                setTimeout(() => {
+                                    this.name = '';
+                                    this.email = '';
+                                    this.phone = '';
+                                    this.message = '';
+                                }, 1000);
+                            }
+                        }">
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Nombre Completo</label>
+                                <input type="text" id="name" x-model="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Correo Electrónico</label>
+                                <input type="email" id="email" x-model="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Teléfono</label>
+                                <input type="tel" id="phone" x-model="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Mensaje</label>
+                                <textarea id="message" x-model="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required></textarea>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <button type="button" @click="submit()" class="bg-blue-700 hover:bg-blue-800 text-white font-medium py-3 px-6 rounded-lg transition w-full flex items-center justify-center">
+                                    <span x-show="!submitted">Enviar Mensaje</span>
+                                    <span x-show="submitted" class="flex items-center">
+                                        <i class="fas fa-check mr-2"></i> Mensaje Enviado
+                                    </span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Feed -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4 text-blue-800">Síguenos en Redes Sociales</h2>
+                <div class="h-1 w-24 bg-yellow-400 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Mantente conectado con nuestra comunidad y nuestras actividades en redes sociales.
+                </p>
+            </div>
+
+            <div class="flex justify-center space-x-8 mb-12">
+                <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl transition shadow-lg">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="bg-pink-600 hover:bg-pink-700 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl transition shadow-lg">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="bg-red-600 hover:bg-red-700 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl transition shadow-lg">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="#" class="bg-green-600 hover:bg-green-700 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl transition shadow-lg">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+
+            <!-- Social Media Feed Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Social Media Post Placeholders -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transform transition hover:scale-105">
+                    <img src="/api/placeholder/300/300" alt="Post social media" class="w-full h-48 object-cover">
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transform transition hover:scale-105">
+                    <img src="/api/placeholder/300/300" alt="Post social media" class="w-full h-48 object-cover">
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transform transition hover:scale-105">
+                    <img src="/api/placeholder/300/300" alt="Post social media" class="w-full h-48 object-cover">
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transform transition hover:scale-105">
+                    <img src="/api/placeholder/300/300" alt="Post social media" class="w-full h-48 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="py-12 bg-blue-800 text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Suscríbete a Nuestro Boletín</h2>
+                <p class="mb-6 opacity-90">
+                    Recibe actualizaciones, devocionales y anuncios importantes directamente en tu correo electrónico.
+                </p>
+                <form class="flex flex-col md:flex-row max-w-2xl mx-auto">
+                    <input type="email" placeholder="Tu correo electrónico" class="flex-grow px-4 py-3 rounded-lg md:rounded-r-none mb-3 md:mb-0 text-gray-900" required>
+                    <button type="submit" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-medium px-6 py-3 rounded-lg md:rounded-l-none transition">
+                        Suscribirme
+                    </button>
+                </form>
+                <p class="mt-4 text-sm opacity-80">
+                    Respetamos tu privacidad. Puedes darte de baja en cualquier momento.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="bg-blue-700 rounded-full h-10 w-10 flex items-center justify-center">
+                            <svg class="fill-current size-9" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 71.454 149.999">
+                                <path d="M44.1 141.817s9.273-9.129 9.273-25.718c0-23.003-15.736-23.715-15.736-45.19 0-12.944 9.472-22.302 11.455-24 0 35.554 22.282 33.054 22.282 56.181 0 29.097-27.273 38.727-27.273 38.727ZM26.181 70.281c0 17.811 21.967 33.079 16.909 52.991 0-21.738-37.636-34.445-37.636-62.726 0-24.529 34.467-35.22 23.372-60.545 3.304 1.648 14.728 15.321 14.728 27.273 0 17.237-17.373 25.144-17.373 43.008ZM6.463 84.545c0 16.71 30 27.082 30 44.1 0 10.567-8.068 19.294-12.463 21.355 8.434-19.009-24-15.973-24-45.273 0-9.745 4.096-14.161 6.463-20.182Z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold font-heading leading-tight">Iglesia Bautista</h3>
+                            <p class="text-xs text-blue-400 font-semibold tracking-wider">RESTAURANDO LAS NACIONES</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Comunidad cristiana dedicada a restaurar vidas y familias a través de la palabra de Dios.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+    
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Enlaces Rápidos</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#inicio" class="text-gray-400 hover:text-white transition">Inicio</a></li>
+                        <li><a href="#nosotros" class="text-gray-400 hover:text-white transition">Nosotros</a></li>
+                        <li><a href="#servicios" class="text-gray-400 hover:text-white transition">Servicios</a></li>
+                        <li><a href="#ministerios" class="text-gray-400 hover:text-white transition">Ministerios</a></li>
+                        <li><a href="#eventos" class="text-gray-400 hover:text-white transition">Eventos</a></li>
+                        <li><a href="#contacto" class="text-gray-400 hover:text-white transition">Contacto</a></li>
+                    </ul>
+                </div>
+    
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Contáctanos</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-blue-400 mt-1 mr-3"></i>
+                            <span class="text-gray-400">No me la se<br>Ciudad, Soledad</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-blue-400 mr-3"></i>
+                            <span class="text-gray-400">(123) 456-7890</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-blue-400 mr-3"></i>
+                            <span class="text-gray-400">nolose@restaurandolasnaciones.org</span>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Horarios de Servicios</h3>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between">
+                            <span class="text-gray-400">Domingo:</span>
+                            <span class="text-gray-400">7:00 AM - 8:30 AM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-400">Domingo:</span>
+                            <span class="text-gray-400">9:30 AM - 11:00 AM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+            <p class="text-gray-500">&copy; 2025 Iglesia Bautista Restaurando Las Naciones. Todos los derechos reservados.</p>
+            <p class="text-gray-500 text-sm mt-2">Diseñado con <span class="text-red-500">&hearts;</span> por Josue Tejeda</p>
+        </div>
+    </footer>
+</body>
